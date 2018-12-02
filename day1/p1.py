@@ -6,4 +6,4 @@ sum = 0
 for line in lines:
     sum += int(line)
 
-print sum
+print(sum)
