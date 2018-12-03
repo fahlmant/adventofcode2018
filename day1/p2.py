@@ -10,5 +10,5 @@ for num in itertools.cycle(lines):
     if numsum in numseen:
         print(numsum)
         break
-    numseen.add(numseen)
+    numseen.add(numsum)
 
