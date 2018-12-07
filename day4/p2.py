@@ -35,7 +35,8 @@ def bestTime(guard, guardsAndTime):
     print(bestMinute)
     return bestMinute
             
-guard = max(guardsTotal.items(), key=lambda a: a[1])
+mostSlept = (max(guardsWithTime.items(), key=lambda a: a[1]))
+sleepiestGuard = mostSlept[0][0]
+sleepiestMinute = mostSlept[0][1]
 
-minute = bestTime(guard[0], guardsWithTime)
-print(guard[0]*minute)
+print(sleepiestGuard*sleepiestMinute)
