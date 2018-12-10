@@ -30,5 +30,3 @@ while(len(queue) != 0):
         pre = precede[node]
         if ((node not in finalOrder) and allInList(pre, finalOrder)):
             heapq.heappush(queue, node)
-
-print(''.join(finalOrder))
