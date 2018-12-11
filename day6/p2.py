@@ -23,6 +23,9 @@ sharedSize = 0
 
 for i in range(0,xMax+1):
     for j in range(0, yMax+1):
-        sharedSize += int(sum(mannDist((x,y),(i,j)) for (x,y) in points) < 10000)
+        isLess = sum(mannDist((x,y),(i,j)) for (x,y) in points) < 10000
+        if isLess:
+            sharedSize += 1
+        
 
 print(sharedSize)
