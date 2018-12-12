@@ -1,19 +1,18 @@
 with open('input') as f:
-    items =  f.read().split()
+    items = [int(x) for  x in f.read().split()]
 
-def sumOfMetadata(node):
-    result = 0
-    for value in node[0]:
-        result += value
-    for child in node[1]:
-        result+= sumOfMetadata(child)
-    return result
+def parseTree(data):
+    childrenNodes = data[0]
+    metaNodes = data[1]
+    otherNodes = data[2:]
+    results = 0
 
-def parseTree(root):
-    childrenNodes = []
-    metaNodes = []
+    for _ in range(0, childrenNodes):
+        result, otherNodes = parseTree(otherNodes)
+        results += result
+    
+    results += sum(otherNodes[:metaNodes])
+    return (results, otherNodes[metaNodes:])
 
-childNodeNum = items[0]
-metadataNum = items[1]
-
-
+result, left = parseTree(items)
+print(result)        
