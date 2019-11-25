@@ -9,6 +9,7 @@ for num in itertools.cycle(lines):
     numsum += int(num)
     if numsum in numseen:
         print(numsum)
+        print(len(numseen))
         break
     numseen.add(numsum)
 
