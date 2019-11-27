@@ -1,7 +1,7 @@
 import collections
 
 #Read lines in
-with open('input') as f:
+with open('../input') as f:
     lines = f.readlines()
 
 #Init vars
@@ -24,4 +24,6 @@ for line in lines:
         numThrees = numThrees + 1
     i = i+1
 
+print(numTwos)
+print(numThrees)
 print(numTwos*numThrees)
